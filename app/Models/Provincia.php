@@ -12,7 +12,7 @@ class Provincia extends Model
     protected $fillable =[
         'id_departamento',
         'descripcion'
-    ]
+    ];
 
     public function departamento(){
         return $this->belongsTo(Departamento::class);
