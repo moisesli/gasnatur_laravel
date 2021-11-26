@@ -3,10 +3,13 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Windmill Dashboard</title>
+  <title>{{ config('app.name', 'Laravel') }}</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <!-- Tailwind -->
   <link rel="stylesheet" href="{{ asset('theme/css/tailwind.output.css') }}"/>
-  <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+
+  <!-- Scripts -->
+  <script src="{{ mix('js/app.js') }}" defer></script>
   <script src="{{ asset('theme/js/init-alpine.js') }}"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.css"/>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js" defer></script>
@@ -19,7 +22,7 @@
   <aside class="z-20 hidden w-64 overflow-y-auto bg-white dark:bg-gray-800 md:block flex-shrink-0">
     <div class="py-4 text-gray-500 dark:text-gray-400">
       <a class="ml-6 text-lg font-bold text-gray-800 dark:text-gray-200" href="#">
-        Windmill
+        GasNatur
       </a>
       <ul class="mt-6">
         <li class="relative px-6 py-3">
@@ -45,7 +48,7 @@
                 d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"
               ></path>
             </svg>
-            <span class="ml-4">Dashboard</span>
+            <span class="ml-4">Solicitudes</span>
           </a>
         </li>
       </ul>
@@ -69,7 +72,7 @@
                 d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"
               ></path>
             </svg>
-            <span class="ml-4">Forms</span>
+            <span class="ml-4">Empresas</span>
           </a>
         </li>
         <li class="relative px-6 py-3">
@@ -91,7 +94,7 @@
                 d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"
               ></path>
             </svg>
-            <span class="ml-4">Cards</span>
+            <span class="ml-4">Departamentos</span>
           </a>
         </li>
         <li class="relative px-6 py-3">
@@ -114,7 +117,7 @@
               ></path>
               <path d="M20.488 9H15V3.512A9.025 9.025 0 0120.488 9z"></path>
             </svg>
-            <span class="ml-4">Charts</span>
+            <span class="ml-4">Provincias</span>
           </a>
         </li>
         <li class="relative px-6 py-3">
@@ -136,7 +139,7 @@
                 d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122"
               ></path>
             </svg>
-            <span class="ml-4">Buttons</span>
+            <span class="ml-4">Distritos</span>
           </a>
         </li>
         <li class="relative px-6 py-3">
@@ -814,12 +817,12 @@
         <h2
           class="my-6 text-2xl font-semibold text-gray-700 dark:text-gray-200"
         >
-          Dashboard
+          Lista de Solicitudes Pendientes
         </h2>
         <!-- CTA -->
         <a
           class="flex items-center justify-between p-4 mb-8 text-sm font-semibold text-purple-100 bg-purple-600 rounded-lg shadow-md focus:outline-none focus:shadow-outline-purple"
-          href="https://github.com/estevanmaito/windmill-dashboard"
+          href="#"
         >
           <div class="flex items-center">
             <svg
@@ -831,10 +834,16 @@
                 d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
               ></path>
             </svg>
-            <span>Star this project on GitHub</span>
+            <span>Proyecto Gasnatur en Construccion ...</span>
           </div>
           <span>View more &RightArrow;</span>
         </a>
+
+        <!-- Page Content -->
+        <main>
+          {{ $slot }}
+        </main>
+
         <!-- Cards -->
         <div class="grid gap-6 mb-8 md:grid-cols-2 xl:grid-cols-4">
           <!-- Card -->
