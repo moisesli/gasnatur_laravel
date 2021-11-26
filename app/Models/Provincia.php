@@ -18,7 +18,7 @@ class Provincia extends Model
     ];
 
     public function departamentos(){
-        return $this->belongsTo(Departamento::class);
+        return $this->belongsTo(Departamento::class,'foreign_key', 'owner_key');
     }
 
     public function distritos(){

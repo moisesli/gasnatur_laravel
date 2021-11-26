@@ -14,7 +14,7 @@ class CreateDistritosTable extends Migration
     public function up()
     {
         Schema::create('distritos', function (Blueprint $table) {
-            $table->id('id_distritos');
+            $table->id('id_distrito');
             $table->unsignedBigInteger('id_provincia');
             $table->foreign('id_provincia')
                   ->references('id_provincia')

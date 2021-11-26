@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DepartamentoController;
 use App\Http\Controllers\ProvinciaController;
+use App\Http\Controllers\DistritoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,3 +32,9 @@ Route::post('/Provincias',[ProvinciaController::class, 'CrearProvincia']);
 Route::get('/Provincias/{idprovincia}',[ProvinciaController::class, 'ObtenerProvincia']);
 Route::put('/Provincias/{idprovincia}',[ProvinciaController::class, 'ModificarProvincia']);
 Route::delete('/Provincias/{idprovincia}',[ProvinciaController::class, 'EliminarProvincia']);
+
+//---------------------------------DISTRITOS-------------------------------------------------------------
+Route::post('/Distritos',[DistritoController::class, 'CrearDistrito']);
+Route::get('/Distritos/{id_distrito}',[DistritoController::class, 'ObtenerDistrito']);
+Route::put('/Distritos/{id_ditrito}',[DistritoController::class, 'ModificarDistrito']);
+Route::delete('/Distritos/{id_distrito}',[DistritoController::class, 'EliminarDistrito']);

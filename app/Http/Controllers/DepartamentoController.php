@@ -15,8 +15,8 @@ class DepartamentoController extends Controller
     }
 
     public function ObtenerDepartamento($id_departamento){
-        $departamento = Departamento::find($id_departamento);
-        return response()->json($id_departamento);
+        $departamento = Departamento::all();
+        return response()->json($departamento);
     }
 
     public function ModificarDepartamento(Request $request, $id_departamento){
