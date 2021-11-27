@@ -22,14 +22,15 @@
             </p>
             <form method="POST" action="{{ route('login') }}">
               @csrf
-              <label class="block text-sm" for="email">
-                <span class="text-gray-700 dark:text-gray-400">Correo</span>
-                <input id="email" name="email" class="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input" placeholder="micorreo@gmail.com"/>
+              <label class="block text-sm">
+                <x-jet-label for="email" class="text-sm text-gray-700 dark:text-gray-400" value="{{ __('Correo') }}"/>
+                <x-jet-input id="email" name="email" type="email" class="block mt-1 w-full" :value="old('name')" placeholder="correo@gmail.com" required autofocus autocomplete="name"/>
               </label>
               <label class="block mt-4 text-sm">
-                <span class="text-gray-700 dark:text-gray-400">Contrasenia</span>
-                <input id="password" type="password" name="password" required autocomplete="current-password" class="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input" placeholder="***************"/>
+                <x-jet-label id="password" for="password" value="{{ __('Contrasenia') }}"/>
+                <x-jet-input id="password" class="block mt-1 w-full" type="password" name="password" required placeholder="************"/>
               </label>
+
 
               <button type="submit" class="block w-full px-4 py-2 mt-4 text-sm font-medium leading-5 text-center text-white transition-colors duration-150 bg-purple-600 border border-transparent rounded-lg active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple">
                 Entrar al Sistema
@@ -40,12 +41,12 @@
             <hr class="my-8" />
 
             <p class="mt-4">
-              <a class="text-sm font-medium text-purple-600 dark:text-purple-400 hover:underline" href="./forgot-password.html">
+              <a class="text-sm font-medium text-purple-600 dark:text-purple-400 hover:underline" href="#">
                 Olvidaste tu contrasenia?
               </a>
             </p>
             <p class="mt-1">
-              <a class="text-sm font-medium text-purple-600 dark:text-purple-400 hover:underline" href="./create-account.html">
+              <a class="text-sm font-medium text-purple-600 dark:text-purple-400 hover:underline" href="{{ route('register') }}">
                 Create una cuenta.
               </a>
             </p>
