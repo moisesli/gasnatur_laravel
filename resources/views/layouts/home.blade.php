@@ -16,7 +16,7 @@
   <!-- Scripts -->
   <script src="{{ mix('js/app.js') }}" defer></script>
   <script src="{{ asset('theme/js/init-alpine.js') }}"></script>
-
+  @livewireStyles
 </head>
 <body>
 <div class="flex h-screen bg-gray-50 dark:bg-gray-900" :class="{ 'overflow-hidden': isSideMenuOpen }">
@@ -697,5 +697,6 @@
   </div>
 
 </div>
+@livewireScripts
 </body>
 </html>
