@@ -1,14 +1,13 @@
-<DOCTYPE html>
+<!DOCTYPE html>
 <html :class="{ 'theme-dark': dark }" x-data="data()" lang="en">
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <meta name="csrf-token" content="{{ csrf_token() }}">
   <title>{{ config('app.name', 'Laravel') }}</title>
+
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
 
-  <!-- Styles -->
-  {{--  <link rel="stylesheet" href="{{ mix('css/app.css') }}">--}}
   <!-- Tailwind -->
   <link rel="stylesheet" href="{{ asset('theme/css/tailwind.output.css') }}"/>
 
@@ -17,10 +16,7 @@
   <!-- Scripts -->
   <script src="{{ mix('js/app.js') }}" defer></script>
   <script src="{{ asset('theme/js/init-alpine.js') }}"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.css"/>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js" defer></script>
-  <script src="{{ asset('theme/js/charts-lines.js') }}" defer></script>
-  <script src="{{ asset('theme/js/charts-pie.js') }}" defer></script>
+
 </head>
 <body>
 <div class="flex h-screen bg-gray-50 dark:bg-gray-900" :class="{ 'overflow-hidden': isSideMenuOpen }">
@@ -32,8 +28,11 @@
       </a>
       <ul class="mt-6">
         <li class="relative px-6 py-3">
-          <span class="absolute inset-y-0 left-0 w-1 bg-purple-600 rounded-tr-lg rounded-br-lg" aria-hidden="true"></span>
-          <a class="inline-flex items-center w-full text-sm font-semibold text-gray-800 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200 dark:text-gray-100" href="index.html">
+          <span class="absolute inset-y-0 left-0 w-1 bg-purple-600 rounded-tr-lg rounded-br-lg"
+                aria-hidden="true"></span>
+          <a
+            class="inline-flex items-center w-full text-sm font-semibold text-gray-800 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200 dark:text-gray-100"
+            href="index.html">
             <i class="ml-1 fa-lg w-5 h-5 fa fa-home"></i>
             <span class="ml-4"> Solicitudes</span>
           </a>
@@ -41,37 +40,49 @@
       </ul>
       <ul>
         <li class="relative px-6 py-3">
-          <a class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200" href="forms.html">
+          <a
+            class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
+            href="forms.html">
             <i class="ml-1 w-5 h-4 fa-lg far fa-file-alt"></i>
             <span class="ml-4">Empresas</span>
           </a>
         </li>
         <li class="relative px-6 py-3">
-          <a class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200" href="cards.html">
+          <a
+            class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
+            href="cards.html">
             <i class="ml-1 w-5 h-4 fa-lg fas fa-book-open"></i>
             <span class="ml-4">Departamentos</span>
           </a>
         </li>
         <li class="relative px-6 py-3">
-          <a class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200" href="charts.html">
+          <a
+            class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
+            href="charts.html">
             <i class="ml-1 w-5 h-4 fa-lg far fa-building"></i>
             <span class="ml-4">Provincias</span>
           </a>
         </li>
         <li class="relative px-6 py-3">
-          <a class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200" href="buttons.html">
+          <a
+            class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
+            href="buttons.html">
             <i class="ml-1 w-5 h-4 fa-lg fas fa-car-side"></i>
             <span class="ml-4">Distritos</span>
           </a>
         </li>
         <li class="relative px-6 py-3">
-          <a class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200" href="modals.html">
+          <a
+            class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
+            href="modals.html">
             <i class="ml-1 w-5 h-4 fa-lg far fa-credit-card"></i>
             <span class="ml-4">Modals</span>
           </a>
         </li>
         <li class="relative px-6 py-3">
-          <a class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200" href="tables.html">
+          <a
+            class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
+            href="tables.html">
             <i class="ml-1 w-5 h-4 fa-lg fas fa-table"></i>
             <span class="ml-4">Tables</span>
           </a>
@@ -98,7 +109,7 @@
               class="p-2 mt-2 space-y-2 overflow-hidden text-sm font-medium text-gray-500 rounded-md shadow-inner bg-gray-50 dark:text-gray-400 dark:bg-gray-900"
               aria-label="submenu"
             >
-              <li class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200" >
+              <li class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200">
                 <a class="w-full" href="pages/login.html">Login</a>
               </li>
               <li class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200">
@@ -111,7 +122,7 @@
                   Forgot password
                 </a>
               </li>
-              <li                 class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
+              <li class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
               >
                 <a class="w-full" href="pages/404.html">404</a>
               </li>
@@ -396,13 +407,15 @@
         </li>
       </ul>
       <div class="px-6 my-6">
-        <button class="flex items-center justify-between px-4 py-2 text-sm font-medium leading-5 text-white transition-colors duration-150 bg-purple-600 border border-transparent rounded-lg active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple">
+        <button
+          class="flex items-center justify-between px-4 py-2 text-sm font-medium leading-5 text-white transition-colors duration-150 bg-purple-600 border border-transparent rounded-lg active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple">
           Create account
           <span class="ml-2" aria-hidden="true">+</span>
         </button>
       </div>
     </div>
   </aside>
+
   <div class="flex flex-col flex-1 w-full">
     <header class="z-10 py-4 bg-white shadow-md dark:bg-gray-800">
       <div class="container flex items-center justify-between h-full px-6 mx-auto text-purple-600 dark:text-purple-300">
@@ -682,6 +695,7 @@
       </div>
     </main>
   </div>
+
 </div>
 </body>
 </html>
