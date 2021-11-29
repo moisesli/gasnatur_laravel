@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Livewire\Empresas;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,9 +23,7 @@ Route::get('/', function () {
   Route::middleware(['auth:sanctum', 'verified'])->group(function (){
 
     // Empresas
-    Route::get('/empresas', function (){
-      return view('empresas');
-    });
+    Route::get('/empresas',Empresas::class);
 
     // DashBoard
     Route::get('/dashboard', function (){
@@ -32,6 +31,7 @@ Route::get('/', function () {
     });
 
   });
+
 
 //Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 //    return view('dashboard');

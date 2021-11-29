@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Livewire\Empresas;
+namespace App\Http\Livewire;
 
 use Livewire\Component;
 
@@ -8,6 +8,6 @@ class Empresas extends Component
 {
     public function render()
     {
-        return view('livewire.empresas.empresas');
+        return view('livewire.empresas');
     }
 }
