@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Livewire\Empresas;
+use App\Http\Livewire\Empresas\Empresas;
 
 /*
 |--------------------------------------------------------------------------
