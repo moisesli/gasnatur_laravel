@@ -20,7 +20,7 @@ class CreateDistritosTable extends Migration
                   ->references('id_provincia')
                   ->on('provincias')
                   ->onDelete('cascade');
-            $table->string('descripcion', 100)->nullable();
+            $table->string('descripcion', 50)->nullable();
             $table->timestamps();
         });
     }
