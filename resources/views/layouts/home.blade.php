@@ -43,54 +43,14 @@
         </li>
       </ul>
       <ul>
-        <li class="relative px-6 py-3">
-          <a
-            class="inline-flex items-center w-full text-base font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
-            href="forms.html">
-            <i class="ml-1 w-5 h-4 fa-lg far fa-file-alt"></i>
-            <span class="ml-4">Empresas</span>
-          </a>
-        </li>
-        <li class="relative px-6 py-3">
-          <a
-            class="inline-flex items-center w-full text-base font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
-            href="cards.html">
-            <i class="ml-1 w-5 h-4 fa-lg fas fa-file-audio"></i>
-            <span class="ml-4">Departamentos</span>
-          </a>
-        </li>
-        <li class="relative px-6 py-3">
-          <a
-            class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
-            href="charts.html">
-            <i class="ml-1 w-5 h-4 fa-lg far fa-building"></i>
-            <span class="ml-4">Provincias</span>
-          </a>
-        </li>
-        <li class="relative px-6 py-3">
-          <a
-            class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
-            href="buttons.html">
-            <i class="ml-1 w-5 h-4 fa-lg fas fa-car-side"></i>
-            <span class="ml-4">Distritos</span>
-          </a>
-        </li>
-        <li class="relative px-6 py-3">
-          <a
-            class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
-            href="modals.html">
-            <i class="ml-1 w-5 h-4 fa-lg far fa-credit-card"></i>
-            <span class="ml-4">Modals</span>
-          </a>
-        </li>
-        <li class="relative px-6 py-3">
-          <a
-            class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
-            href="tables.html">
-            <i class="ml-1 w-5 h-4 fa-lg fas fa-table"></i>
-            <span class="ml-4">Tables</span>
-          </a>
-        </li>
+        <x-sidebar-item name="Empresas" icon="far fa-file-alt" route="#" />
+        <x-sidebar-item name="Departamentos" icon="fas fa-file-audio" route="#" />
+        <x-sidebar-item name="Provincias" icon="far fa-building" route="#" />
+        <x-sidebar-item name="Distritos" icon="fas fa-car-side" route="#" />
+        <x-sidebar-item name="Modals" icon="fas fa-credit-card" route="#" />
+        <x-sidebar-item name="Tables" icon="fas fa-table" route="#" />
+
+        {{-- Sub menu --}}
         <li class="relative px-6 py-3">
           <button
             class="inline-flex items-center justify-between w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
@@ -104,46 +64,22 @@
           </button>
           <template x-if="isPagesMenuOpen">
             <ul
-              x-transition:enter="transition-all ease-in-out duration-300"
-              x-transition:enter-start="opacity-25 max-h-0"
-              x-transition:enter-end="opacity-100 max-h-xl"
-              x-transition:leave="transition-all ease-in-out duration-300"
-              x-transition:leave-start="opacity-100 max-h-xl"
-              x-transition:leave-end="opacity-0 max-h-0"
               class="p-2 mt-2 space-y-2 overflow-hidden text-sm font-medium text-gray-500 rounded-md shadow-inner bg-gray-50 dark:text-gray-400 dark:bg-gray-900"
-              aria-label="submenu"
-            >
-              <li class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200">
-                <a class="w-full" href="pages/login.html">Login</a>
-              </li>
-              <li class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200">
-                <a class="w-full" href="pages/create-account.html">
-                  Create account
-                </a>
-              </li>
-              <li class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200">
-                <a class="w-full" href="pages/forgot-password.html">
-                  Forgot password
-                </a>
-              </li>
-              <li class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
-              >
-                <a class="w-full" href="pages/404.html">404</a>
-              </li>
-              <li
-                class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
-              >
-                <a class="w-full" href="pages/blank.html">Blank</a>
-              </li>
+              aria-label="submenu">
+              <x-sidebar-item-child name="Login" url="#" icon="fa fa-file" />
+              <x-sidebar-item-child name="Create account" url="#" icon="fa fa-file" />
+              <x-sidebar-item-child name="Forgot password" url="#" icon="fa fa-file" />
+              <x-sidebar-item-child name="404" url="#" icon="fa fa-file" />
+              <x-sidebar-item-child name="Blank" url="#" icon="fa fa-file" />
             </ul>
           </template>
         </li>
+        {{-- End Sub menu --}}
       </ul>
       <div class="px-6 my-6">
         <button
-          class="flex items-center justify-between w-full px-4 py-2 text-sm font-medium leading-5 text-white transition-colors duration-150 bg-purple-600 border border-transparent rounded-lg active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple"
-        >
-          Create account
+          class="flex items-center justify-between w-full px-4 py-2 text-sm font-medium leading-5 text-white transition-colors duration-150 bg-purple-600 border border-transparent rounded-lg active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple">
+          Reportes Principales
           <span class="ml-2" aria-hidden="true">+</span>
         </button>
       </div>
@@ -385,8 +321,7 @@
               x-transition:leave-start="opacity-100 max-h-xl"
               x-transition:leave-end="opacity-0 max-h-0"
               class="p-2 mt-2 space-y-2 overflow-hidden text-sm font-medium text-gray-500 rounded-md shadow-inner bg-gray-50 dark:text-gray-400 dark:bg-gray-900"
-              aria-label="submenu"
-            >
+              aria-label="submenu">
               <li class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200">
                 <a class="w-full" href="pages/login.html">Login</a>
               </li>
