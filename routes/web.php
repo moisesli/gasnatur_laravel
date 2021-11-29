@@ -18,6 +18,21 @@ Route::get('/', function () {
     //    return view('welcome');
 });
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-    return view('dashboard');
-})->name('dashboard');
+
+  Route::middleware(['auth:sanctum', 'verified'])->group(function (){
+
+    // Empresas
+    Route::get('/empresas', function (){
+      return view('empresas');
+    });
+
+    // DashBoard
+    Route::get('/dashboard', function (){
+      return view('dashboard');
+    });
+
+  });
+
+//Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
+//    return view('dashboard');
+//})->name('dashboard');
