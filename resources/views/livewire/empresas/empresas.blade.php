@@ -1,126 +1,73 @@
 <!-- Titulo -->
-<h2 class="my-6 text-2xl font-semibold text-gray-700 dark:text-gray-200">Lista de Solicitudes Pendientes</h2>
+<h2 class="my-6 text-2xl font-semibold text-gray-700 dark:text-gray-200">Empresas</h2>
 
-<div class="max-w-md bg-gray-500">
-  hola mundo
-</div>
-
-<!-- Table -->
-<div class="max-w-md">
-<div class="w-full  mx-auto bg-white shadow-lg rounded-sm border border-gray-200 px-4">
-  <header class="px-5 py-4 border-b border-gray-100">
-    <h2 class="font-semibold text-gray-800">Customers</h2>
-  </header>
-  <div class="p-3">
-    <div class="overflow-x-auto">
-      <table class="table-auto w-full">
-        <thead class="text-xs font-semibold uppercase text-gray-400 bg-gray-50">
-        <tr>
-          <th class="p-2 whitespace-nowrap">
-            <div class="font-semibold text-left">Name</div>
-          </th>
-          <th class="p-2 whitespace-nowrap">
-            <div class="font-semibold text-left">Email</div>
-          </th>
-          <th class="p-2 whitespace-nowrap">
-            <div class="font-semibold text-left">Spent</div>
-          </th>
-          <th class="p-2 whitespace-nowrap">
-            <div class="font-semibold text-center">Country</div>
-          </th>
-        </tr>
-        </thead>
-        <tbody class="text-sm divide-y divide-gray-100">
-        <tr>
-          <td class="p-2 whitespace-nowrap">
-            <div class="flex items-center">
-              <div class="w-10 h-10 flex-shrink-0 mr-2 sm:mr-3"><img class="rounded-full" src="https://raw.githubusercontent.com/cruip/vuejs-admin-dashboard-template/main/src/images/user-36-05.jpg" width="40" height="40" alt="Alex Shatov"></div>
-              <div class="font-medium text-gray-800">Alex Shatov</div>
-            </div>
-          </td>
-          <td class="p-2 whitespace-nowrap">
-            <div class="text-left">alexshatov@gmail.com</div>
-          </td>
-          <td class="p-2 whitespace-nowrap">
-            <div class="text-left font-medium text-green-500">$2,890.66</div>
-          </td>
-          <td class="p-2 whitespace-nowrap">
-            <div class="text-lg text-center">🇺🇸</div>
-          </td>
-        </tr>
-        <tr>
-          <td class="p-2 whitespace-nowrap">
-            <div class="flex items-center">
-              <div class="w-10 h-10 flex-shrink-0 mr-2 sm:mr-3"><img class="rounded-full" src="https://raw.githubusercontent.com/cruip/vuejs-admin-dashboard-template/main/src/images/user-36-06.jpg" width="40" height="40" alt="Philip Harbach"></div>
-              <div class="font-medium text-gray-800">Philip Harbach</div>
-            </div>
-          </td>
-          <td class="p-2 whitespace-nowrap">
-            <div class="text-left">philip.h@gmail.com</div>
-          </td>
-          <td class="p-2 whitespace-nowrap">
-            <div class="text-left font-medium text-green-500">$2,767.04</div>
-          </td>
-          <td class="p-2 whitespace-nowrap">
-            <div class="text-lg text-center">🇩🇪</div>
-          </td>
-        </tr>
-        <tr>
-          <td class="p-2 whitespace-nowrap">
-            <div class="flex items-center">
-              <div class="w-10 h-10 flex-shrink-0 mr-2 sm:mr-3"><img class="rounded-full" src="https://raw.githubusercontent.com/cruip/vuejs-admin-dashboard-template/main/src/images/user-36-07.jpg" width="40" height="40" alt="Mirko Fisuk"></div>
-              <div class="font-medium text-gray-800">Mirko Fisuk</div>
-            </div>
-          </td>
-          <td class="p-2 whitespace-nowrap">
-            <div class="text-left">mirkofisuk@gmail.com</div>
-          </td>
-          <td class="p-2 whitespace-nowrap">
-            <div class="text-left font-medium text-green-500">$2,996.00</div>
-          </td>
-          <td class="p-2 whitespace-nowrap">
-            <div class="text-lg text-center">🇫🇷</div>
-          </td>
-        </tr>
-        <tr>
-          <td class="p-2 whitespace-nowrap">
-            <div class="flex items-center">
-              <div class="w-10 h-10 flex-shrink-0 mr-2 sm:mr-3"><img class="rounded-full" src="https://raw.githubusercontent.com/cruip/vuejs-admin-dashboard-template/main/src/images/user-36-08.jpg" width="40" height="40" alt="Olga Semklo"></div>
-              <div class="font-medium text-gray-800">Olga Semklo</div>
-            </div>
-          </td>
-          <td class="p-2 whitespace-nowrap">
-            <div class="text-left">olga.s@cool.design</div>
-          </td>
-          <td class="p-2 whitespace-nowrap">
-            <div class="text-left font-medium text-green-500">$1,220.66</div>
-          </td>
-          <td class="p-2 whitespace-nowrap">
-            <div class="text-lg text-center">🇮🇹</div>
-          </td>
-        </tr>
-        <tr>
-          <td class="p-2 whitespace-nowrap">
-            <div class="flex items-center">
-              <div class="w-10 h-10 flex-shrink-0 mr-2 sm:mr-3"><img class="rounded-full" src="https://raw.githubusercontent.com/cruip/vuejs-admin-dashboard-template/main/src/images/user-36-09.jpg" width="40" height="40" alt="Burak Long"></div>
-              <div class="font-medium text-gray-800">Burak Long</div>
-            </div>
-          </td>
-          <td class="p-2 whitespace-nowrap">
-            <div class="text-left">longburak@gmail.com</div>
-          </td>
-          <td class="p-2 whitespace-nowrap">
-            <div class="text-left font-medium text-green-500">$1,890.66</div>
-          </td>
-          <td class="p-2 whitespace-nowrap">
-            <div class="text-lg text-center">🇬🇧</div>
-          </td>
-        </tr>
-        </tbody>
-      </table>
+<!-- Table Empresa -->
+<div class="mr-4">
+  <div class="w-full bg-white shadow-lg rounded-md border border-gray-200 px-4">
+    <header class="px-5 pt-5 pb-4 border-b border-gray-100">
+      <a
+        href=""
+        class="px-3 py-2 bg-purple-500 text-gray-200 rounded-md text-xs font-medium">
+        <i class="fa fa-plus"></i> Nuevo
+      </a>
+    </header>
+    <div class="p-3">
+      <div class="overflow-x-auto">
+        <table class="table-auto w-full">
+          <thead class="text-xs font-semibold uppercase text-gray-400 bg-gray-50">
+          <tr>
+            <th class="p-2 whitespace-nowrap">
+              <div class="font-semibold text-left">Razon</div>
+            </th>
+            <th class="p-2 whitespace-nowrap">
+              <div class="font-semibold text-left">RUC</div>
+            </th>
+            <th class="p-2 whitespace-nowrap">
+              <div class="font-semibold text-left">Direccion</div>
+            </th>
+            <th class="p-2 whitespace-nowrap">
+              <div class="font-semibold text-left">Celular</div>
+            </th>
+            <th class="p-2 whitespace-nowrap">
+              <div class="font-semibold text-center">Acciones</div>
+            </th>
+          </tr>
+          </thead>
+          <tbody class="text-sm divide-y divide-gray-100">
+          <tr>
+            <td class="p-2 whitespace-nowrap">
+              <div class="flex items-center">
+                <div class="w-10 h-10 flex-shrink-0 mr-2 sm:mr-3">
+                  <img
+                    class="rounded-full"
+                    src="https://raw.githubusercontent.com/cruip/vuejs-admin-dashboard-template/main/src/images/user-36-05.jpg"
+                    width="40" height="40" alt="Alex Shatov">
+                </div>
+                <div class="font-medium text-purple-800">Thomas Turcotte</div>
+              </div>
+            </td>
+            <td class="p-2 whitespace-nowrap">
+              <div class="text-left">10425162530</div>
+            </td>
+            <td class="p-2 whitespace-nowrap">
+              <div class="text-left">53004 O'Hara Lodge
+                New Sallie, TN 63829</div>
+            </td>
+            <td class="p-2 whitespace-nowrap">
+              <div class="text-left font-medium text-purple-600">+1-217-618-2922</div>
+            </td>
+            <td class="p-2 whitespace-nowrap">
+              <div class="text-lg text-center">
+                <i class="fa fa-edit text-purple-500 mr-2"></i>
+                <i class="fa fa-trash text-purple-500"></i>
+              </div>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
   </div>
-</div>
 </div>
 
 

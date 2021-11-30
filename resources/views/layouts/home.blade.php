@@ -390,17 +390,8 @@
         </ul>
       </div>
     </header>
-    <main class="px-4 max-w-screen-md">
-
-
-
-
-
-          {{ $slot }}
-
-
-
-
+    <main class="px-12 py-3">
+      {{ $slot }}
     </main>
   </div>
 
