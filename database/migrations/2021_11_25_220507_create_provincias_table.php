@@ -20,7 +20,7 @@ class CreateProvinciasTable extends Migration
                    -> references('id_departamento')
                    -> on('departamentos')
                    -> onDelete('cascade');
-            $table->string('descripcion', 100)->nullable();
+            $table->string('descripcion', 50)->nullable();
             $table->timestamps();
         });
     }

@@ -44,7 +44,7 @@
       </ul>
       <ul>
         <x-sidebar-item name="Empresas" icon="far fa-file-alt" route="#" />
-        <x-sidebar-item name="Departamentos" icon="fas fa-file-audio" route="#" />
+        <x-sidebar-item name="Departamentos" icon="fas fa-file-audio" route="departamentos.index" />
         <x-sidebar-item name="Provincias" icon="far fa-building" route="#" />
         <x-sidebar-item name="Distritos" icon="fas fa-car-side" route="#" />
         <x-sidebar-item name="Modals" icon="fas fa-credit-card" route="#" />
