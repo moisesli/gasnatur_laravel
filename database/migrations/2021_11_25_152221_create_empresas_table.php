@@ -12,6 +12,8 @@ class CreateEmpresasTable extends Migration
      * @return void
      */
     public function up()
+
+
     {
         Schema::create('empresas', function (Blueprint $table) {
             $table->id();

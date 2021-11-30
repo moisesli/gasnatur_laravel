@@ -20,4 +20,5 @@ class Empresa extends Model
         'logo',
         'estado'
     ];
+    public $timestamps = false;
 }
