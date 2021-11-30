@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Livewire\Empresas\Empresas;
+use App\Http\Livewire\Departamentos\Departamentos;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,6 +25,9 @@ Route::get('/', function () {
 
     // Empresas
     Route::get('/empresas',Empresas::class);
+
+    // Departamentos
+    Route::get('/departamentos', Departamentos::class);
 
     // DashBoard
     Route::get('/dashboard', function (){
