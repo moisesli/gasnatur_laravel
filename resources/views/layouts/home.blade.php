@@ -43,7 +43,7 @@
         </li>
       </ul>
       <ul>
-        <x-sidebar-item name="Empresas" icon="far fa-file-alt" route="#" />
+        <x-sidebar-item name="Empresas" icon="far fa-file-alt" route="/empresas" />
         <x-sidebar-item name="Departamentos" icon="fas fa-file-audio" route="/departamentos" />
         <x-sidebar-item name="Provincias" icon="far fa-building" route="/provincias" />
         <x-sidebar-item name="Distritos" icon="fas fa-car-side" route="/distritos" />
@@ -390,17 +390,8 @@
         </ul>
       </div>
     </header>
-    <main class="h-full overflow-y-auto">
-      <div class="container px-6 mx-auto grid">
-
-
-        <!-- Page Content -->
-        <main>
-          {{ $slot }}
-        </main>
-
-
-      </div>
+    <main class="px-12 py-3">
+      {{ $slot }}
     </main>
   </div>
 
