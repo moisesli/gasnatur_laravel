@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Livewire\Empresas\Empresas;
 use App\Http\Livewire\Departamentos\Departamentos;
+use App\Http\Livewire\Provincias\Provincias;
+use App\Http\Livewire\Distritos\Distritos;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,6 +30,12 @@ Route::get('/', function () {
 
     // Departamentos
     Route::get('/departamentos', Departamentos::class);
+
+    //Provincias
+    Route::get('/provincias', Provincias::class);
+
+    //Distritos
+    Route::get('/distritos', Distritos::class);
 
     // DashBoard
     Route::get('/dashboard', function (){

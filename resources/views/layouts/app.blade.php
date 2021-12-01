@@ -15,7 +15,7 @@
         <link rel="stylesheet" href="{{ mix('css/app.css') }}">
         
         @livewireStyles
-
+        <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
         <!-- Scripts -->
         <script src="{{ mix('js/app.js') }}" defer></script>
     </head>
