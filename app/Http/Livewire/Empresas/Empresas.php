@@ -10,10 +10,9 @@ use Illuminate\Support\Str;
 class Empresas extends Component
 {
 
-  public $empresas;
-  public $modal = 0;
+  public $modal = false;
 
-  public function crear(){
+  public function create(){
     $this->limpiar();
     $this->openModal();
   }
@@ -23,6 +22,10 @@ class Empresas extends Component
   }
 
   public function closeModal(){
+    $this->modal = false;
+  }
+
+  public function closex(){
     $this->modal = false;
   }
 
