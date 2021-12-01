@@ -9,5 +9,12 @@ class Distrito extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['description'];
+    protected $fillable = [
+        'description',
+        'provincia_id'
+    ];
+
+    public function provincias(){
+        return $this->belongsTo(Provincia::class);
+    }
 }
