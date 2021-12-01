@@ -26,7 +26,7 @@ class EmpresaFactory extends Factory
       'celular' => $this->faker->phoneNumber,
       'correo' => $this->faker->email,
       'web' => $this->faker->url,
-      'logo' => $this->faker->imageUrl,
+      'logo' => $this->faker->imageUrl(300,300),
       'estado' => $this->faker->randomElement($array = array ('cerrado','abierto','pausado'))
     ];
   }

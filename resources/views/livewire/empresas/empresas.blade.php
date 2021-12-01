@@ -9,7 +9,7 @@
         <a
           wire:click="openModal()"
           href="#"
-          class="text-center px-3 py-2 bg-purple-500 text-gray-200 rounded-md text-sm font-medium">
+          class="text-center px-4 py-2 bg-purple-500 text-gray-200 rounded-md text-sm font-medium">
           <i wire:loading wire:target="openModal" class="text-xl fas fa-spinner fa-spin"></i>
           <i wire:loading.remove wire:target="openModal" class="fa fa-plus"></i>
           Nuevo
@@ -25,7 +25,7 @@
             <div class="modal-content py-4 text-left px-6">
               <!--Title-->
               <div class="flex justify-between items-center pb-3">
-                <p class="text-2xl font-bold">Header</p>
+                <p class="text-2xl font-bold">Nueva Empresa</p>
                 <div wire:click="closex()" class="modal-close cursor-pointer z-50">
                   <i wire:loading wire:target="closex" class="text-xl fas fa-spinner fa-spin"></i>
                   <i wire:loading.remove wire:target="closex" class="text-xl fas fa-times"></i>
@@ -37,11 +37,13 @@
               </div>
               <!--Footer-->
               <div class="flex justify-end pt-2">
-                <button wire:click="closeModal()" class="focus:outline-none modal-close px-4 bg-gray-600 p-3 rounded-lg text-white hover:bg-gray-300">
-                  <i wire:loading wire:target="closeModal" class="text-xl fas fa-spinner fa-spin"></i> Cancelar
-                </button>
-                <button class="focus:outline-none px-4 bg-purple-500 p-3 ml-3 rounded-lg text-white hover:bg-teal-400">
+                <button class="focus:outline-none px-4 bg-purple-500 p-3 mr-3 rounded-lg text-white hover:bg-teal-400">
                   Confirm
+                </button>
+
+                <button wire:click="closeModal()" class="focus:outline-none modal-close px-4 bg-gray-600 p-3 rounded-lg text-white hover:bg-gray-300">
+                  <i wire:loading wire:target="closeModal" class="text-xl fas fa-spinner fa-spin"></i>
+                    Cancelar
                 </button>
               </div>
             </div>
@@ -80,7 +82,7 @@
                     <div class="w-10 h-10 flex-shrink-0 mr-2 sm:mr-3">
                       <img
                         class="rounded-full"
-                        src="https://raw.githubusercontent.com/cruip/vuejs-admin-dashboard-template/main/src/images/user-36-05.jpg"
+                        src="{{ $empresa->logo }}"
                         width="40" height="40" alt="Alex Shatov">
                     </div>
                     <div class="font-medium text-purple-600">{{ $empresa->razon_social }}</div>
