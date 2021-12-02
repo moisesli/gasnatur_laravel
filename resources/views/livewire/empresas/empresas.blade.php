@@ -18,10 +18,10 @@
 
       {{--Modal --}}
       @if($modal)
-        <div class="main-modal fixed w-full h-100 inset-0 z-50 overflow-hidden flex justify-center items-center animated fadeIn faster"
-             style="background: rgba(0,0,0,.7);">
-          <div
-            class="border border-teal-500 shadow-lg modal-container bg-white max-w-xl mx-auto rounded shadow-lg z-50 overflow-y-auto">
+        <div
+          class="main-modal fixed w-full h-100 inset-0 z-50 overflow-hidden flex justify-center items-center animated fadeIn faster"
+          style="background: rgba(0,0,0,.7);">
+          <div class="border border-teal-500 shadow-lg modal-container bg-white w-full max-w-xl mx-auto rounded-md shadow-lg z-50 overflow-y-auto">
             <div class="modal-content py-4 text-left px-6">
               <!--Title-->
               <div class="flex justify-between items-center pb-3">
@@ -31,10 +31,59 @@
                   <i wire:loading.remove wire:target="closex" class="text-xl fas fa-times"></i>
                 </div>
               </div>
-              <!--Body-->
+
+              <!-- Body -->
               <div class="my-5">
-                <p>Inliberali Persius Multi iustitia pronuntiaret expeteretur sanos didicisset laus angusti ferrentur arbitrium arbitramur huic desiderent.?</p>
+
+                {{-- Primera Fila --}}
+                <div class="flex">
+                  <div class="w-1/2 mr-0">
+                    <x-jet-label
+                      for="ruc"
+                      class="text-sm text-gray-700 dark:text-gray-400"
+                      value="Ruc"/>
+                    <x-g-input wire:model="empresa.ruc" type="text" name="ruc" class="mt-1" placeholder="10425162530"/>
+                  </div>
+                  <div class="w-1/2 ml-2">
+                    <x-jet-label
+                      for="razon_social" class="text-sm text-gray-700 dark:text-gray-400"
+                      value="{{ __('Razon Social') }}"/>
+                    <x-g-input wire:model="empresa.razon_social" type="text" name="razon_social" class="mt-1" placeholder="Empresa Asociados S.R.L."/>
+                  </div>
+                </div>
+
+                {{-- Segunda Fila--}}
+                <div class="flex mt-5">
+                  {{-- Nombre Comercial --}}
+                  <div class="w-1/2 mr-0">
+                    <x-label-form for="nombre_comercial" value="Nombre Comercial"/>
+                    <x-g-input type="text" name="nombre_comercial" class="mt-1" placeholder="Nombre Comercial"/>
+                  </div>
+                  {{-- Direccion --}}
+                  <div class="w-1/2 ml-2">
+                    <x-label-form for="direccion" value="Direccion"/>
+                    <x-g-input type="text" name="direccion" class="mt-1" placeholder="Direccion"/>
+                  </div>
+                </div>
+
+                {{-- Tercera Fila --}}
+                <div class="flex mt-5">
+                  <div class="w-3/12 mr-2">
+                    <x-label-form for="telefono" value="Nro Telefono"/>
+                    <x-g-input type="text" name="telefono" class="mt-1" placeholder="01-32456"/>
+                  </div>
+                  <div class="w-3/12 mr-2">
+                    <x-label-form for="celular" value="Nro Celular"/>
+                    <x-g-input type="text" name="celular" class="mt-1" placeholder="952631806"/>
+                  </div>
+                  <div class="w-6/12">
+                    <x-label-form for="correo" value="Correo Electronico"/>
+                    <x-g-input type="email" class="mt-1" placeholder="tucorreo@gmail.com" />
+                  </div>
+                </div>
               </div>
+              <!-- End Body -->
+
               <!--Footer-->
               <div class="flex justify-end pt-2">
                 <button class="focus:outline-none px-4 bg-purple-500 p-3 mr-3 rounded-lg text-white hover:bg-teal-400">
@@ -50,8 +99,8 @@
           </div>
         </div>
       @endif
-
       {{--End Modal--}}
+
       <div class="p-3">
         <div class="overflow-x-auto">
           <table class="table-auto w-full">

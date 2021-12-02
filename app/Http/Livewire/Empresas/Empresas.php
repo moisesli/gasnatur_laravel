@@ -11,6 +11,11 @@ class Empresas extends Component
 {
 
   public $modal = false;
+  public $empresa = array(
+    "ruc" => '1234',
+    "razon_social" => 'Razon social'
+  );
+  public $ruc = '';
 
   public function create(){
     $this->limpiar();
