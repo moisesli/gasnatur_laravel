@@ -10,19 +10,33 @@
             <div class="inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full" role="dialog" aria-modal="true" aria-labelledby="modal-headline">    
                 <form>
                     <div class="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
+
+                        <div class="mb-4">
+                            <select  wire:click="changeEvent($event.target.value)">
+                                <option>Selecciona un departamento</option>
+                                @foreach($departamentos as $departamento)
+                                    @if($departamento_id == $departamento->id)
+                                        <option selected value="{{$departamento->id}}">{{$departamento->descripcion}}</option>
+                                    @endif
+
+                                    else
+                                        <option value="{{$departamento->id}}">{{$departamento->descripcion}}</option>
+                                    @endelse
+            
+                                    @endforeach
+                            </select>
+                        </div> 
+
+
+
+
                         <div class="mb-4">
                             <label for="descripcion" class="block text-gray-700 text-sm font-bold mb-2">Ingresa la nueva provincia:</label>  
                             <input type="text" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="descripcion" wire:model="descripcion">
                         </div>
-
-                        <div class="mb-4">
-                            <select>
-                                <option selected>Selecciona un departamento</option>
-                                @foreach($departamentos as $departamento)
-                                    <option>{{$departamento->descripcion}}</option>
-                                @endforeach
-                            </select>
-                        </div> 
+                        <p>{{$id_provincia}}</p>
+                        
+                        <p>{{$departamento_id}}</p>
 
                         
 

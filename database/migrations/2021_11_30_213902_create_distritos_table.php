@@ -16,7 +16,13 @@ class CreateDistritosTable extends Migration
         Schema::create('distritos', function (Blueprint $table) {
             $table->id();
             $table->string('descripcion',50);
+            $table->unsignedBigInteger('provincia_id');
+            $table->foreign('provincia_id')
+                  ->references('id')
+                  ->on('provincias')
+                  ->onDelete('cascade');
             $table->timestamps();
+            
         });
     }
 

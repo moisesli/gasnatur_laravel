@@ -8,5 +8,16 @@ use Illuminate\Database\Eloquent\Model;
 class Provincia extends Model
 {
     use HasFactory;
-    protected $fillable = ['descripcion'];
+    protected $fillable = [
+        'descripcion',
+        'departamento_id'
+    ];
+
+    public function departamentos(){
+        return $this->belongsTo(Departamento::class);
+    }
+
+    public function distritos(){
+        return $this->hasMany(Distrito::class);
+    }
 }
