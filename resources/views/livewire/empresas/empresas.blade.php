@@ -34,7 +34,8 @@
 
               <!-- Body -->
               <div class="my-5 pb-4">
-                <form wire:submit.prevent="save">
+                <form>
+
                 {{-- Primera Fila --}}
                 <div class="flex">
                   <div class="w-2/5 mr-0">
@@ -42,7 +43,7 @@
                     <x-g-input wire:model="empresa.ruc" type="text" name="ruc" class="mt-1" placeholder="10425162530"/>
                   </div>
                   <div class="w-3/5 ml-3">
-                    <x-g-label for="razon_social" value="{{ __('Razon Social') }}"/>
+                    <x-g-label for="razon_social" value="Razon Social"/>
                     <x-g-input wire:model="empresa.razon_social" type="text" name="razon_social" class="mt-1" placeholder="Empresa Asociados S.R.L."/>
                   </div>
                 </div>
@@ -98,14 +99,10 @@
                 </div>
                 </form>
               </div>
-
-
-
               <!-- End Body -->
 
               <!--Footer-->
               <div class="flex items-center justify-end pt-2">
-
                 <button
                   wire:click="closeModal()"
                   class="mr-3 focus:outline-none modal-close px-4 bg-gray-500 py-2 rounded-lg text-white hover:bg-gray-600">
@@ -113,10 +110,10 @@
                   <i wire:loading.remove wire:target="closeModal" class="far fa-times-circle mr-2"></i>Cancelar
                 </button>
 
-                <button class="focus:outline-none px-4 bg-purple-500 px-4 py-2  rounded-lg text-white hover:bg-purple-600">
-                  <i class="far fa-save mr-2"></i>Guardar
+                <button wire:click="guardar()" class="focus:outline-none px-4 bg-purple-500 px-4 py-2  rounded-lg text-white hover:bg-purple-600">
+                  <i wire:loading wire:target="guardar" class="fas fa-spinner fa-spin"></i>
+                  <i wire:loading.remove wire:target="guardar" class="far fa-save mr-2"></i>Guardar
                 </button>
-
 
               </div>
             </div>
@@ -148,7 +145,7 @@
             </tr>
             </thead>
             <tbody class="text-sm divide-y divide-gray-100 dark:text-gray-400">
-            @foreach($empresas as $empresa)
+            @foreach($empresas as $index => $empresa)
               <tr>
                 <td class="p-2 whitespace-nowrap">
                   <div class="flex items-center">
@@ -172,8 +169,14 @@
                 </td>
                 <td class="p-2 whitespace-nowrap">
                   <div class="text-lg text-center">
-                    <i class="fa fa-edit text-purple-500 mr-2"></i>
-                    <i class="fa fa-trash text-purple-500"></i>
+                    <a href="#" wire:click="editar({{ $empresa->id }})" class="text-sm bg-purple-500 text-white py-1 px-2 rounded-md text-center mr-2">
+                      <i wire:loading wire:target="editar({{ $empresa->id }})" class="fas fa-spinner fa-spin"></i>
+                      <i wire:loading.remove wire:target="editar({{ $empresa->id }})"  class="fa fa-edit"></i>
+                      Editar
+                    </a>
+                    <a href="#" class="text-xs bg-purple-500 text-white py-2 px-2 rounded-md text-center">
+                      <i class="fa fa-trash"></i> Borrar
+                    </a>
                   </div>
                 </td>
               </tr>
