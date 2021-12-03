@@ -24,30 +24,25 @@
           <div class="border border-teal-500 shadow-lg modal-container bg-white w-full max-w-xl mx-auto rounded-md shadow-lg z-50 overflow-y-auto">
             <div class="modal-content py-4 text-left px-6">
               <!--Title-->
-              <div class="flex justify-between items-center pb-3">
-                <p class="text-2xl font-bold">Nueva Empresa</p>
-                <div wire:click="closex()" class="modal-close cursor-pointer z-50">
+              <div class="flex justify-between items-center pb-4 border-b">
+                <p class="text-xl text-gray-500 font-medium"><i class="fa fa-plus"></i> Nueva Empresa</p>
+                <div wire:click="closex()" class="modal-close text-gray-400 cursor-pointer z-50">
                   <i wire:loading wire:target="closex" class="text-xl fas fa-spinner fa-spin"></i>
                   <i wire:loading.remove wire:target="closex" class="text-xl fas fa-times"></i>
                 </div>
               </div>
 
               <!-- Body -->
-              <div class="my-5">
-
+              <div class="my-5 pb-4">
+                <form wire:submit.prevent="save">
                 {{-- Primera Fila --}}
                 <div class="flex">
-                  <div class="w-1/2 mr-0">
-                    <x-jet-label
-                      for="ruc"
-                      class="text-sm text-gray-700 dark:text-gray-400"
-                      value="Ruc"/>
+                  <div class="w-2/5 mr-0">
+                    <x-g-label for="ruc" value="Ruc"/>
                     <x-g-input wire:model="empresa.ruc" type="text" name="ruc" class="mt-1" placeholder="10425162530"/>
                   </div>
-                  <div class="w-1/2 ml-2">
-                    <x-jet-label
-                      for="razon_social" class="text-sm text-gray-700 dark:text-gray-400"
-                      value="{{ __('Razon Social') }}"/>
+                  <div class="w-3/5 ml-3">
+                    <x-g-label for="razon_social" value="{{ __('Razon Social') }}"/>
                     <x-g-input wire:model="empresa.razon_social" type="text" name="razon_social" class="mt-1" placeholder="Empresa Asociados S.R.L."/>
                   </div>
                 </div>
@@ -56,44 +51,73 @@
                 <div class="flex mt-5">
                   {{-- Nombre Comercial --}}
                   <div class="w-1/2 mr-0">
-                    <x-label-form for="nombre_comercial" value="Nombre Comercial"/>
-                    <x-g-input type="text" name="nombre_comercial" class="mt-1" placeholder="Nombre Comercial"/>
+                    <x-g-label for="nombre_comercial" value="Nombre Comercial"/>
+                    <x-g-input wire:model="empresa.nombre_comercial" type="text" name="nombre_comercial" class="mt-1" placeholder="Nombre Comercial"/>
                   </div>
                   {{-- Direccion --}}
-                  <div class="w-1/2 ml-2">
-                    <x-label-form for="direccion" value="Direccion"/>
-                    <x-g-input type="text" name="direccion" class="mt-1" placeholder="Direccion"/>
+                  <div class="w-1/2 ml-3">
+                    <x-g-label for="direccion" value="Direccion"/>
+                    <x-g-input wire:model="empresa.direccion" type="text" name="direccion" class="mt-1" placeholder="Direccion"/>
                   </div>
                 </div>
 
                 {{-- Tercera Fila --}}
                 <div class="flex mt-5">
-                  <div class="w-3/12 mr-2">
-                    <x-label-form for="telefono" value="Nro Telefono"/>
-                    <x-g-input type="text" name="telefono" class="mt-1" placeholder="01-32456"/>
+                  <div class="w-6/12 flex">
+                    <div class="w-1/2 mr-2">
+                      <x-g-label for="telefono" value="Nro Telefono"/>
+                      <x-g-input wire:model="empresa.telefono" type="text" name="telefono" class="mt-1" placeholder="01-32456"/>
+                    </div>
+                    <div class="w-1/2 mr-0">
+                      <x-g-label for="celular" value="Nro Celular"/>
+                      <x-g-input wire:model="empresa.celular" type="text" name="celular" class="mt-1" placeholder="952631806"/>
+                    </div>
                   </div>
-                  <div class="w-3/12 mr-2">
-                    <x-label-form for="celular" value="Nro Celular"/>
-                    <x-g-input type="text" name="celular" class="mt-1" placeholder="952631806"/>
-                  </div>
-                  <div class="w-6/12">
-                    <x-label-form for="correo" value="Correo Electronico"/>
-                    <x-g-input type="email" class="mt-1" placeholder="tucorreo@gmail.com" />
+                  <div class="w-6/12 ml-3">
+                    <x-g-label for="correo" value="Correo Electronico"/>
+                    <x-g-input wire:model="empresa.correo" type="email" class="mt-1" placeholder="tucorreo@gmail.com" />
                   </div>
                 </div>
+
+                {{-- Cuarta fila: web --}}
+                <div class="flex mt-4">
+                  <div class="w-6/12 flex">
+                    <div class="w-1/2 mr-2">
+                      <x-g-label for="logo" value="Logoo Empresa"/>
+                      <x-g-input wire:model="empresa.logo" type="text" class="mt-1" placeholder="Logo" />
+                    </div>
+                    <div class="w-1/2">
+                      <x-g-label for="estado" value="Estado"/>
+                      <x-g-input wire:model="empresa.estado" type="text" class="mt-1" placeholder="Activo" />
+                    </div>
+                  </div>
+                  <div class="w-6/12 ml-3">
+                    <x-g-label for="web" value="Pagina Web" />
+                    <x-g-input wire:model="empresa.web" type="text" class="mt-1" placeholder="www.tupaginaweb.com" />
+                  </div>
+                </div>
+                </form>
               </div>
+
+
+
               <!-- End Body -->
 
               <!--Footer-->
-              <div class="flex justify-end pt-2">
-                <button class="focus:outline-none px-4 bg-purple-500 p-3 mr-3 rounded-lg text-white hover:bg-teal-400">
-                  Confirm
+              <div class="flex items-center justify-end pt-2">
+
+                <button
+                  wire:click="closeModal()"
+                  class="mr-3 focus:outline-none modal-close px-4 bg-gray-500 py-2 rounded-lg text-white hover:bg-gray-600">
+                  <i wire:loading wire:target="closeModal" class="fas fa-spinner fa-spin"></i>
+                  <i wire:loading.remove wire:target="closeModal" class="far fa-times-circle mr-2"></i>Cancelar
                 </button>
 
-                <button wire:click="closeModal()" class="focus:outline-none modal-close px-4 bg-gray-600 p-3 rounded-lg text-white hover:bg-gray-300">
-                  <i wire:loading wire:target="closeModal" class="text-xl fas fa-spinner fa-spin"></i>
-                    Cancelar
+                <button class="focus:outline-none px-4 bg-purple-500 px-4 py-2  rounded-lg text-white hover:bg-purple-600">
+                  <i class="far fa-save mr-2"></i>Guardar
                 </button>
+
+
               </div>
             </div>
           </div>

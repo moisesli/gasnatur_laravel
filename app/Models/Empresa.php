@@ -7,18 +7,19 @@ use Illuminate\Database\Eloquent\Model;
 
 class Empresa extends Model
 {
-    use HasFactory;
-    protected $fillable = [
-        'ruc',
-        'razon_social',
-        'nombre_comercial',
-        'direccion',
-        'telefono',
-        'celular',
-        'correo',
-        'web',
-        'logo',
-        'estado'
-    ];
-    public $timestamps = false;
+  use HasFactory;
+
+  protected $fillable = [
+    'ruc',
+    'razon_social',
+    'nombre_comercial',
+    'direccion',
+    'telefono',
+    'celular',
+    'correo',
+    'web',
+    'logo',
+    'estado'
+  ];
+  public $timestamps = false;
 }
