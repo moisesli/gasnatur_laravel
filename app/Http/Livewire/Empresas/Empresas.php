@@ -8,19 +8,13 @@ use Livewire\Component;
 
 class Empresas extends Component
 {
+  public $empresas;
   public Empresa $empresa;
   protected $rules = [
-    'empresa.ruc' => 'required',
-    'empresa.razon_social' => 'required',
-    'empresa.nombre_comercial' => 'required',
-    'empresa.direccion' => 'required',
-    'empresa.telefono' => 'required',
-    'empresa.celular' => 'required',
-    'empresa.correo' => 'required',
-    'empresa.web' => 'required',
-    'empresa.logo' => 'required',
-    'empresa.estado' => 'required',
+    'empresa.ruc' => 'required|string|min:6',
   ];
+
+
 
 
   public $modal = false;
@@ -59,9 +53,11 @@ class Empresas extends Component
     $this->modal = false;
   }
 
-  public function render()
-  {
+  public function mount(){
     $this->empresas = Empresa::all();
-    return view('livewire.empresas.empresas');
+    if (isset($this->empresa)) {
+      $this->empresa = 'dsad';
+    }
+
   }
 }
