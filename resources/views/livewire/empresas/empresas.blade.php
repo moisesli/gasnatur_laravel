@@ -167,16 +167,21 @@
                 <td class="p-2 whitespace-nowrap">
                   <div class="text-left font-medium text-purple-600">{{ $empresa->celular }}</div>
                 </td>
-                <td class="p-2 whitespace-nowrap">
+                <td class="p-2">
                   <div class="text-lg text-center">
-                    <a href="#" wire:click="editar({{ $empresa->id }})" class="text-sm bg-purple-500 text-white py-1 px-2 rounded-md text-center mr-2">
+
+                    {{-- Button Edit --}}
+                    <x-g-botton wire:click="editar({{ $empresa->id }})" color="gray" class="mr-2">
                       <i wire:loading wire:target="editar({{ $empresa->id }})" class="fas fa-spinner fa-spin"></i>
                       <i wire:loading.remove wire:target="editar({{ $empresa->id }})"  class="fa fa-edit"></i>
                       Editar
-                    </a>
-                    <a href="#" class="text-xs bg-purple-500 text-white py-2 px-2 rounded-md text-center">
+                    </x-g-botton>
+
+                    {{-- Button Delete --}}
+                    <x-g-botton color="red">
                       <i class="fa fa-trash"></i> Borrar
-                    </a>
+                    </x-g-botton>
+
                   </div>
                 </td>
               </tr>

@@ -16,8 +16,8 @@ mix.js('resources/js/app.js', 'public/js')
         require('postcss-import'),
         require('tailwindcss')
     ])
-    .copy('node_modules/@fortawesome/fontawesome-free/css/all.min.css', 'public/fonts/')
-    .copy('node_modules/@fortawesome/fontawesome-free/webfonts/', 'public/webfonts/')
+    //.copy('node_modules/@fortawesome/fontawesome-free/css/all.min.css', 'public/fonts/')
+    //.copy('node_modules/@fortawesome/fontawesome-free/webfonts/', 'public/webfonts/')
 
 if (mix.inProduction()) {
     mix.version();
