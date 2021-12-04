@@ -174,17 +174,13 @@
                     <x-g-botton wire:click="editar({{ $empresa->id }})" color="gray" class="mr-2">
                       <i wire:loading wire:target="editar({{ $empresa->id }})" class="fas fa-spinner fa-spin"></i>
                       <i wire:loading.remove wire:target="editar({{ $empresa->id }})"  class="fa fa-edit"></i>
-                      Editar
+                      Editarrt
                     </x-g-botton>
 
-                    <button class="bg-red-400">
-                      boton rojo
-                    </button>
-
-                    {{-- Button Delete --}}
-                    <x-g-botton color="red" >
+                    <x-g-button-red>
                       <i class="fa fa-trash"></i> Borrar
-                    </x-g-botton>
+                    </x-g-button-red>
+
 
                   </div>
                 </td>
