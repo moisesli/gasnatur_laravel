@@ -177,6 +177,10 @@
                       Editar
                     </x-g-botton>
 
+                    <button class="bg-red-400">
+                      boton rojo
+                    </button>
+
                     {{-- Button Delete --}}
                     <x-g-botton color="red" >
                       <i class="fa fa-trash"></i> Borrar
