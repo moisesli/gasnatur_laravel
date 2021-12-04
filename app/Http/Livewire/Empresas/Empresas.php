@@ -11,22 +11,29 @@ class Empresas extends Component
 
   public $empresa = array(
     "id" => '',
-    "ruc" => '10425162530',
-    "razon_social" => 'Margaretta McLaughlin Jr.',
-    "nombre_comercial" => 'Florian Kovacek',
-    "direccion" => '33890 Alison Alley Ursulaville, WA 66134',
-    "telefono" => '484.583.2492',
-    "celular" => '254-717-5551',
-    "correo" => 'hills.elena@yahoo.com',
-    "web" => 'http://www.leffler.info/consectetur-officia-et-cupiditate-rerum-enim-corporis.html',
-    "logo" => 'https://via.placeholder.com/300x300.png/004499?text=cum',
-    "estado" => 'pausado',
+    "ruc" => '',
+    "razon_social" => '',
+    "nombre_comercial" => '',
+    "direccion" => '',
+    "telefono" => '',
+    "celular" => '',
+    "correo" => '',
+    "web" => '',
+    "logo" => '',
+    "estado" => '',
   );
 
   protected $rules = [
     'empresa.ruc' => 'required|string|min:6',
     'empresa.razon_social' => '',
     'empresa.nombre_comercial' => '',
+    'empresa.direccion' => '',
+    'empresa.telefono' => '',
+    'empresa.celular' => '',
+    'empresa.correo' => '',
+    'empresa.web' => '',
+    'empresa.logo' => '',
+    'empresa.estado' => '',
   ];
   public $modal = false;
 
@@ -44,8 +51,12 @@ class Empresas extends Component
   }
 
   public function create(){
-    $this->limpiar();
+    $this->clear();
     $this->openModal();
+  }
+
+  public function clear(){
+    $this->empresa = array_filter($this->empresa);
   }
 
   public function openModal(){

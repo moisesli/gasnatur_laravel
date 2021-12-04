@@ -6,6 +6,7 @@
   <div class="mr-10 pl-0 pr-4">
     <div class="w-full bg-white dark:bg-gray-800 dark:border-gray-700 shadow-lg rounded-md border border-gray-200 px-4">
       <header class="px-5 pt-5 pb-4 border-b border-gray-100 dark:border-gray-700">
+        <
         <a
           wire:click="openModal()"
           href="#"
@@ -171,14 +172,14 @@
                   <div class="text-lg text-center">
 
                     {{-- Button Edit --}}
-                    <x-g-botton wire:click="editar({{ $empresa->id }})" color="gray" class="mr-2">
+                    <x-g-button-purple wire:click="editar({{ $empresa->id }})" class="mr-1">
                       <i wire:loading wire:target="editar({{ $empresa->id }})" class="fas fa-spinner fa-spin"></i>
                       <i wire:loading.remove wire:target="editar({{ $empresa->id }})"  class="fa fa-edit"></i>
-                      Editarrt
-                    </x-g-botton>
+                    </x-g-button-purple>
 
+                    {{-- Button Delete --}}
                     <x-g-button-red>
-                      <i class="fa fa-trash"></i> Borrar
+                      <i class="fa fa-trash"></i>
                     </x-g-button-red>
 
 
