@@ -178,7 +178,7 @@
                     </x-g-botton>
 
                     {{-- Button Delete --}}
-                    <x-g-botton color="red">
+                    <x-g-botton color="red" >
                       <i class="fa fa-trash"></i> Borrar
                     </x-g-botton>
 
