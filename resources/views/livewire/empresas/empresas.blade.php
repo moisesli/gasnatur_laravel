@@ -7,11 +7,13 @@
     <div class="w-full bg-white dark:bg-gray-800 dark:border-gray-700 shadow-lg rounded-md border border-gray-200 px-4">
 
       <header class="px-5 pt-5 pb-4 border-b border-gray-100 dark:border-gray-700">
-        <x-g-button-purple wire:click="create()">
+        {{-- Nuevo Empresa--}}
+        <x-g-button-purple wire:click="create()" class="text-base">
           <i wire:loading wire:target="create" class="fas fa-spinner fa-spin"></i>
           <i wire:loading.remove wire:target="create" class="fa fa-plus"></i>
           Nuevo
         </x-g-button-purple>
+        {{-- End Nueva Empresa --}}
       </header>
 
       {{--Modal --}}
@@ -38,11 +40,11 @@
                 <div class="flex">
                   <div class="w-2/5 mr-0">
                     <x-g-label for="ruc" value="Ruc"/>
-                    <x-g-input wire:model="empresa.ruc" type="text" name="ruc" class="mt-1" placeholder="10425162530"/>
+                    <x-g-input wire:model="empresa.ruc" type="text" name="ruc" class="mt-1"/>
                   </div>
                   <div class="w-3/5 ml-3">
                     <x-g-label for="razon_social" value="Razon Social"/>
-                    <x-g-input wire:model="empresa.razon_social" type="text" name="razon_social" class="mt-1" placeholder="Empresa Asociados S.R.L."/>
+                    <x-g-input wire:model="empresa.razon_social" type="text" name="razon_social" class="mt-1"/>
                   </div>
                 </div>
 
@@ -51,12 +53,12 @@
                   {{-- Nombre Comercial --}}
                   <div class="w-1/2 mr-0">
                     <x-g-label for="nombre_comercial" value="Nombre Comercial"/>
-                    <x-g-input wire:model="empresa.nombre_comercial" type="text" name="nombre_comercial" class="mt-1" placeholder="Nombre Comercial"/>
+                    <x-g-input wire:model="empresa.nombre_comercial" type="text" name="nombre_comercial" class="mt-1"/>
                   </div>
                   {{-- Direccion --}}
                   <div class="w-1/2 ml-3">
                     <x-g-label for="direccion" value="Direccion"/>
-                    <x-g-input wire:model="empresa.direccion" type="text" name="direccion" class="mt-1" placeholder="Direccion"/>
+                    <x-g-input wire:model="empresa.direccion" type="text" name="direccion" class="mt-1"/>
                   </div>
                 </div>
 
@@ -65,16 +67,16 @@
                   <div class="w-6/12 flex">
                     <div class="w-1/2 mr-2">
                       <x-g-label for="telefono" value="Nro Telefono"/>
-                      <x-g-input wire:model="empresa.telefono" type="text" name="telefono" class="mt-1" placeholder="01-32456"/>
+                      <x-g-input wire:model="empresa.telefono" type="text" name="telefono" class="mt-1"/>
                     </div>
                     <div class="w-1/2 mr-0">
                       <x-g-label for="celular" value="Nro Celular"/>
-                      <x-g-input wire:model="empresa.celular" type="text" name="celular" class="mt-1" placeholder="952631806"/>
+                      <x-g-input wire:model="empresa.celular" type="text" name="celular" class="mt-1"/>
                     </div>
                   </div>
                   <div class="w-6/12 ml-3">
                     <x-g-label for="correo" value="Correo Electronico"/>
-                    <x-g-input wire:model="empresa.correo" type="email" class="mt-1" placeholder="tucorreo@gmail.com" />
+                    <x-g-input wire:model="empresa.correo" type="email" class="mt-1"/>
                   </div>
                 </div>
 
@@ -83,16 +85,16 @@
                   <div class="w-6/12 flex">
                     <div class="w-1/2 mr-2">
                       <x-g-label for="logo" value="Logoo Empresa"/>
-                      <x-g-input wire:model="empresa.logo" type="text" class="mt-1" placeholder="Logo" />
+                      <x-g-input wire:model="empresa.logo" type="text" class="mt-1"/>
                     </div>
                     <div class="w-1/2">
                       <x-g-label for="estado" value="Estado"/>
-                      <x-g-input wire:model="empresa.estado" type="text" class="mt-1" placeholder="Activo" />
+                      <x-g-input wire:model="empresa.estado" type="text" class="mt-1"/>
                     </div>
                   </div>
                   <div class="w-6/12 ml-3">
                     <x-g-label for="web" value="Pagina Web" />
-                    <x-g-input wire:model="empresa.web" type="text" class="mt-1" placeholder="www.tupaginaweb.com" />
+                    <x-g-input wire:model="empresa.web" type="text" class="mt-1"/>
                   </div>
                 </div>
                 </form>
@@ -108,9 +110,9 @@
                   <i wire:loading.remove wire:target="closeModal" class="far fa-times-circle mr-2"></i>Cancelar
                 </button>
 
-                <button wire:click="guardar()" class="focus:outline-none px-4 bg-purple-500 px-4 py-2  rounded-lg text-white hover:bg-purple-600">
-                  <i wire:loading wire:target="guardar" class="fas fa-spinner fa-spin"></i>
-                  <i wire:loading.remove wire:target="guardar" class="far fa-save mr-2"></i>Guardar
+                <button wire:click="store()" class="focus:outline-none px-4 bg-purple-500 px-4 py-2  rounded-lg text-white hover:bg-purple-600">
+                  <i wire:loading wire:target="store" class="fas fa-spinner fa-spin"></i>
+                  <i wire:loading.remove wire:target="store" class="far fa-save mr-2"></i>Guardar
                 </button>
 
               </div>

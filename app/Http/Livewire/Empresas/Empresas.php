@@ -23,18 +23,6 @@ class Empresas extends Component
     "estado" => '',
   );
 
-  protected $rules = [
-    'empresa.ruc' => 'required|string|min:6',
-    'empresa.razon_social' => '',
-    'empresa.nombre_comercial' => '',
-    'empresa.direccion' => '',
-    'empresa.telefono' => '',
-    'empresa.celular' => '',
-    'empresa.correo' => '',
-    'empresa.web' => '',
-    'empresa.logo' => '',
-    'empresa.estado' => '',
-  ];
   public $modal = false;
 
   public function guardar(){
@@ -46,7 +34,17 @@ class Empresas extends Component
   public function editar($id){
     $empresa = Empresa::findOrFail($id);
     //dd($empresa);
-    $this->empresa = $empresa;
+    $this->empresa['id'] = $empresa->id;
+    $this->empresa['ruc'] = $empresa->ruc;
+    $this->empresa['razon_social'] = $empresa->razon_social;
+    $this->empresa['nombre_comercial'] = $empresa->nombre_comercial;
+    $this->empresa['direccion'] = $empresa->direccion;
+    $this->empresa['telefono'] = $empresa->telefono;
+    $this->empresa['celular'] = $empresa->celular;
+    $this->empresa['correo'] = $empresa->correo;
+    $this->empresa['web'] = $empresa->web;
+    $this->empresa['logo'] = $empresa->logo;
+    $this->empresa['estado'] = $empresa->estado;
     $this->openModal();
   }
 
@@ -56,20 +54,34 @@ class Empresas extends Component
   }
 
   public function store(){
-
+    Empresa::updateOrCreate(['id'=>$this->empresa['id']],[
+      'ruc' => $this->empresa['ruc'],
+      'razon_social' => $this->empresa['razon_social'],
+      'nombre_comercial' => $this->empresa['nombre_comercial'],
+      'direccion' => $this->empresa['direccion'],
+      'telefono' => $this->empresa['telefono'],
+      'celular' => $this->empresa['celular'],
+      'correo' => $this->empresa['correo'],
+      'web' => $this->empresa['web'],
+      'logo' => $this->empresa['logo'],
+      'estado' => $this->empresa['estado']
+    ]);
+    $this->empresas = Empresa::all();
+    $this->closeModal();
   }
 
   public function clear(){
-    $this->empresa->ruc = '';
-    $this->empresa->razon_social = '';
-    $this->empresa->nombre_comercial = '';
-    $this->empresa->direccion = '';
-    $this->empresa->telefono = '';
-    $this->empresa->celular = '';
-    $this->empresa->correo = '';
-    $this->empresa->web = '';
-    $this->empresa->logo = '';
-    $this->empresa->estado = '';
+    $this->empresa['id'] = '';
+    $this->empresa['ruc'] = '';
+    $this->empresa['razon_social'] = '';
+    $this->empresa['nombre_comercial'] = '';
+    $this->empresa['direccion'] = '';
+    $this->empresa['telefono'] = '';
+    $this->empresa['celular'] = '';
+    $this->empresa['correo'] = '';
+    $this->empresa['web'] = '';
+    $this->empresa['logo'] = '';
+    $this->empresa['estado'] = '';
   }
 
   public function openModal(){
