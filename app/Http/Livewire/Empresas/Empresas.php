@@ -55,8 +55,21 @@ class Empresas extends Component
     $this->openModal();
   }
 
+  public function store(){
+
+  }
+
   public function clear(){
-    $this->empresa = array_filter($this->empresa);
+    $this->empresa->ruc = '';
+    $this->empresa->razon_social = '';
+    $this->empresa->nombre_comercial = '';
+    $this->empresa->direccion = '';
+    $this->empresa->telefono = '';
+    $this->empresa->celular = '';
+    $this->empresa->correo = '';
+    $this->empresa->web = '';
+    $this->empresa->logo = '';
+    $this->empresa->estado = '';
   }
 
   public function openModal(){

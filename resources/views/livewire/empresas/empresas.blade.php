@@ -5,16 +5,13 @@
   <!-- Table Empresa -->
   <div class="mr-10 pl-0 pr-4">
     <div class="w-full bg-white dark:bg-gray-800 dark:border-gray-700 shadow-lg rounded-md border border-gray-200 px-4">
+
       <header class="px-5 pt-5 pb-4 border-b border-gray-100 dark:border-gray-700">
-        <
-        <a
-          wire:click="openModal()"
-          href="#"
-          class="text-center px-4 py-2 bg-purple-500 text-gray-200 rounded-md text-sm font-medium">
-          <i wire:loading wire:target="openModal" class="text-xl fas fa-spinner fa-spin"></i>
-          <i wire:loading.remove wire:target="openModal" class="fa fa-plus"></i>
+        <x-g-button-purple wire:click="create()">
+          <i wire:loading wire:target="create" class="fas fa-spinner fa-spin"></i>
+          <i wire:loading.remove wire:target="create" class="fa fa-plus"></i>
           Nuevo
-        </a>
+        </x-g-button-purple>
       </header>
 
       {{--Modal --}}
