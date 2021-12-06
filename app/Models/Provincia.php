@@ -9,8 +9,9 @@ class Provincia extends Model
 {
     use HasFactory;
     protected $fillable = [
+        'id',
         'descripcion',
-        'departamento_id'
+        'codigoDepartamento'
     ];
 
     public function departamentos(){

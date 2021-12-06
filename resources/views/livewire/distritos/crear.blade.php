@@ -10,19 +10,56 @@
             <div class="inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full" role="dialog" aria-modal="true" aria-labelledby="modal-headline">    
                 <form>
                     <div class="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
-                        <div class="mb-4">
-                            <label for="descripcion" class="block text-gray-700 text-sm font-bold mb-2">Ingresa el nuevo Distrito:</label>  
-                            <input type="text" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="descripcion" wire:model="descripcion">
-                        </div>
 
+<!---------------------------------------------------------------------------------- DEPARTAMENTO ---------------------------------------------->
+
+                        
+<!-----------------------------------------------------------------------COMBO DEPARTAMENTO ---------------------------------------------->
+
+                        
                         <div class="mb-4">
-                            <select>
-                                <option wire:click="changeEvent($event.target.value)">Selecciona una provincia</option>
-                                @foreach($provincias as $provincia)
-                                    <option value="{{$provincia->id}}">{{$provincia->descripcion}}</option>
-                                @endforeach
+                            <label for="selecciona_departamento class" class="block text-gray-700 text-sm font-bold mb-2">Selecciona un Departamento:</label>
+                            <select wire:model="selectedDepartamento" wire:change="listarDepartamentos($event.target.value)">
+                                    <option value="">Departamento</option>
+                                    @foreach($departamentos as $departamento)
+                                    <option {{$codigoDepartamento == $departamento->id ? "selected" : ""}} value="{{$departamento->id}}">{{$departamento->descripcion}}</option>
+                                    @endforeach
                             </select>
                         </div> 
+
+                        <p>{{sprintf('%02d',$codigoDepartamento)}}</p>
+
+                        
+
+<!-------------------------------------------------------------------------COMBO PROVINCIA ---------------------------------------------->
+
+                        @if(!is_null($provincias))
+
+                        <div class="mb-4">
+                            <label for="selecciona_departamento class" class="block text-gray-700 text-sm font-bold mb-2">Provincia:</label>
+                            <select wire:model="selectedProvincia" wire:change="listarProvincias($event.target.value)">
+                                    <option value="">Provincia</option>
+                                    @foreach($provincias as $provincia)
+                                    <option {{$codigoProvincia == $provincia->id ? "selected" : ""}} value="{{$provincia->id}}">{{$provincia->descripcion}}</option>
+                                    @endforeach
+                            </select>
+                        </div> 
+                        @endif
+                        <p>{{sprintf('%04d',$codigoProvincia)}}</p>
+
+
+
+
+                        <div class="mb-4">
+                            <label for="idDistrito" class="block text-gray-700 text-sm font-bold mb-2">Ingresa el código del Distrito:</label>  
+                            <input type="text" pattern="[0,9]{2}" minlength="2" maxlength="2" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="idDistrito" wire:model="idDistrito">
+                        </div>
+                        
+
+                        <div class="mb-4">
+                            <label for="descripcion" class="block text-gray-700 text-sm font-bold mb-2">Descripcion:</label>  
+                            <input type="text" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="descripcion" wire:model="descripcion">
+                        </div>
 
                         
 

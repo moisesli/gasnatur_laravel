@@ -14,10 +14,10 @@ class CreateProvinciasTable extends Migration
     public function up()
     {
         Schema::create('provincias', function (Blueprint $table) {
-            $table->id();
+            $table->char('id',4)->primary();
             $table->string('descripcion',50)->unique();
-            $table->unsignedBigInteger('departamento_id');
-            $table->foreign('departamento_id')
+            $table->char('codigoDepartamento');
+            $table->foreign('codigoDepartamento')
                   ->references('id')
                   ->on('departamentos')
                   ->onDelete('cascade');

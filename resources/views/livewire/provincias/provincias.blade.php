@@ -11,10 +11,8 @@
                 </div>
             </div>
         @endif
-           
         <button wire:click="buscar()" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 my-3" >Buscar</button>
-        <button wire:click="crear()" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 my-3" >Nueva Provincia</button>
-                                                                                  
+        <button wire:click="crear()" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 my-3" >Nueva Provincia</button>   
         @if($modal)
             @include('livewire.provincias.crear')
         @endif
@@ -22,6 +20,7 @@
             <table class="table-fixed w-full">
                  <thead>
                          <tr class="bg-indigo-600 text-white">
+                             <th class="px-4 py-2">ID</th>
                              <th class="px-4 py-2">DEPARTAMENTO</th>
                              <th class="px-4 py-2">PROVINCIA</th>
                              <th class="px-4 py-2">ACCIONES</th>
@@ -30,8 +29,9 @@
                  <tbody>
                      @foreach($provincias as $provincia)
                        
-                         <tr> 
-                             <td class="border px-4 py-2">{{$provincia->nombreDepartamento}}</td>
+                         <tr>  
+                              <td class="border px-4 py-2">{{sprintf('%04d',$provincia->id)}}</td>
+                              <td class="border px-4 py-2">{{$provincia->nombreDepartamento}}</td>
                               <td class="border px-4 py-2">{{$provincia->descripcion}}</td>                        
                               <td class="border px-4 py-2 text-center">
                                   <button wire:click="editar({{$provincia->id, $provincia->nombreDepartamento}})" class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">Editar</button>

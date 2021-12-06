@@ -14,10 +14,10 @@ class CreateDistritosTable extends Migration
     public function up()
     {
         Schema::create('distritos', function (Blueprint $table) {
-            $table->id();
+            $table->char('id',6)->primary();
             $table->string('descripcion',50);
-            $table->unsignedBigInteger('provincia_id');
-            $table->foreign('provincia_id')
+            $table->char('codigoProvincia');
+            $table->foreign('codigoProvincia')
                   ->references('id')
                   ->on('provincias')
                   ->onDelete('cascade');

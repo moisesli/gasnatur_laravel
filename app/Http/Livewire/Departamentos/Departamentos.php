@@ -8,7 +8,7 @@ use App\Models\Departamento;
 
 class Departamentos extends Component
 {
-    public $departamentos, $descripcion, $id_departamento;
+    public $departamentos, $descripcion, $codigoDepartamento, $esNuevo;
 
     public $modal = false;
 
@@ -19,9 +19,16 @@ class Departamentos extends Component
     }
 
     public function crear(){
+        $this->esNuevo = true; 
         $this->limpiarCampos();
         $this->abrirModal();
     }
+
+    public function limpiarCampos(){
+        $this->codigoDepartamento = '';
+        $this->descripcion = '';
+    }
+
 
     public function abrirModal(){
         $this->modal = true;
@@ -31,14 +38,12 @@ class Departamentos extends Component
         $this->modal = false;
     }
 
-    public function limpiarCampos(){
-        $this->id_departamento = '';
-        $this->descripcion = '';
-    }
+    
 
     public function editar($id){
         $departamento = Departamento::findOrFail($id);
-        $this->id_departamento = $id;
+        $this->codigoDepartamento = $id;
+        $this->esNuevo = false;
         $this->descripcion = $departamento->descripcion;
         $this->abrirModal();
     }
@@ -51,13 +56,13 @@ class Departamentos extends Component
 
     public function guardar()
     {
-        Departamento::updateOrCreate(['id'=>$this->id_departamento],
+        Departamento::updateOrCreate(['id'=>$this->codigoDepartamento],
             [
                 'descripcion' => $this->descripcion
             ]);
          
          session()->flash('message',
-            $this->id_departamento ? '¡Actualización exitosa!' : '¡Alta Exitosa!');
+            $this->codigoDepartamento ? '¡Actualización exitosa!' : '¡Alta Exitosa!');
          
          $this->cerrarModal();
          $this->limpiarCampos();

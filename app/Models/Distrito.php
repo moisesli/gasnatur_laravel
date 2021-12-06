@@ -10,8 +10,9 @@ class Distrito extends Model
     use HasFactory;
 
     protected $fillable = [
-        'description',
-        'provincia_id'
+        'id',
+        'descripcion',
+        'codigoProvincia'
     ];
 
     public function provincias(){

@@ -8,8 +8,8 @@ use App\Models\Departamento;
 
 class Provincias extends Component
 {
-    public $provincias, $descripcion, $id_provincia, $departamentos, $departamento, $departamento_id, $combo_departamento;
-
+    public $provincias, $descripcion, $idProvincia;
+    public $departamentos,$departamento, $codigoDepartamento;
     public $modal = false;
 
        
@@ -17,7 +17,7 @@ class Provincias extends Component
     {
 
         $this->provincias = Provincia::select('provincias.id','provincias.descripcion', 'departamentos.descripcion AS nombreDepartamento') // campos que quiero mostrar
-        ->join('departamentos', 'provincias.departamento_id', '=', 'departamentos.id') //tabla con quien relaciono y las columnas que relaciono
+        ->join('departamentos', 'provincias.codigoDepartamento', '=', 'departamentos.id') //tabla con quien relaciono y las columnas que relaciono
         ->orderBy("departamentos.descripcion","ASC")
         ->orderBy("provincias.descripcion","ASC")
         ->get(); //obtengo los campos
@@ -51,15 +51,16 @@ class Provincias extends Component
     }
 
     public function limpiarCampos(){
-        $this->id_provincia = '';
+        $this->codigoDepartamento = ''; 
+        $this->idProvincia = '';
         $this->descripcion = '';
     }
 
     public function editar($id){
         $provincia = Provincia::findOrFail($id);
-        $this->id_provincia = $id;
+        $this->idProvincia = substr($id, -2);
         $this->descripcion = $provincia->descripcion;
-        $this->departamento_id = $provincia -> departamento_id;
+        $this->codigoDepartamento = $provincia -> codigoDepartamento;
         $this->abrirModal();
     }
 
@@ -70,21 +71,28 @@ class Provincias extends Component
     }
 
     public function changeEvent($value){
-        $this->departamento_id = $value;
+        $this->codigoDepartamento = $value;
+        
     }
+
 
     public function guardar()
     {
         
-        Provincia::updateOrCreate(
-            ['id'=>$this->id_provincia],
+        $codigoProvincia =  sprintf('%02d',$this->codigoDepartamento) . sprintf('%02d',$this->idProvincia);
+        if(!is_numeric($this->idProvincia)){
+            return;
+        }
+
+        Provincia::updateOrCreate(  
+            ['id'=>$codigoProvincia],
             ['descripcion' => $this->descripcion,
-            'departamento_id'=> $this->departamento_id
+            'codigoDepartamento'=> sprintf('%02d',$this->codigoDepartamento)
             ]
         );
          
          session()->flash('message',
-            $this->id_provincia ? '¡Actualización exitosa!' : '¡Alta Exitosa!');  
+            $codigoProvincia ? '¡Actualización exitosa!' : '¡Alta Exitosa!');  
             
          $this->cerrarModal();
          $this->limpiarCampos();

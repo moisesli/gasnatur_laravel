@@ -12,34 +12,30 @@
                     <div class="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
 
                         <div class="mb-4">
-                            <select  wire:click="changeEvent($event.target.value)">
-                                <option>Selecciona un departamento</option>
-                                @foreach($departamentos as $departamento)
-                                    @if($departamento_id == $departamento->id)
-                                        <option selected value="{{$departamento->id}}">{{$departamento->descripcion}}</option>
-                                    @endif
-
-                                    else
-                                        <option value="{{$departamento->id}}">{{$departamento->descripcion}}</option>
-                                    @endelse
-            
+                            <label for="selecciona_departamento class" class="block text-gray-700 text-sm font-bold mb-2">Selecciona un Departamento:</label>
+                            <select  wire:change="changeEvent($event.target.value)" id="selecciona_departamento">
+                                        <option>Selecciona un departamento</option>
+                                    @foreach($departamentos as $departamento)
+                                         
+                                             <option {{$codigoDepartamento == $departamento->id ? "selected" : ""}} value="{{$departamento->id}}">{{$departamento->descripcion}}</option>
+ 
                                     @endforeach
                             </select>
                         </div> 
 
-
-
+                        <input type="text" width="20px" value="{{sprintf('%02d',$codigoDepartamento)}}" disabled>
+                        <p>{{sprintf('%02d',$codigoDepartamento)}}</p>
 
                         <div class="mb-4">
-                            <label for="descripcion" class="block text-gray-700 text-sm font-bold mb-2">Ingresa la nueva provincia:</label>  
-                            <input type="text" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="descripcion" wire:model="descripcion">
+                            <label for="idProvincia" class="block text-gray-700 text-sm font-bold mb-2">Ingresa el código de la Provincia:</label>  
+                            <input type="text" pattern="[0,9]{2}" minlength="2" maxlength="2" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="idProvincia" wire:model="idProvincia">
                         </div>
-                        <p>{{$id_provincia}}</p>
-                        
-                        <p>{{$departamento_id}}</p>
 
-                        
-
+                        <div class="relative h-32 w-32">
+                            <label for="descripcion" class="block text-gray-700 text-sm font-bold mb-2">Descripcion:</label>  
+                            <input type="text" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"  id="descripcion" wire:model="descripcion">
+                        </div>
+  
                         <div class="bg-gray-50 px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse">
                             <span class="flex w-full rounded-md shadow-sm sm:ml-3 sm:w-auto">
                                 <button wire:click.prevent="guardar()" type="button" class="inline-flex justify-center w-full rounded-md border border-transparent px-4 py-2 bg-purple-600 text-base leading-6 font-medium text-gray-700 shadow-sm hover:bg-purple-800 focus:outline-none focus:border-green-700 focus:shadow-outline-green transition ease-in-out duration-150 sm:text-sm sm:leading-5">Guardar</button>

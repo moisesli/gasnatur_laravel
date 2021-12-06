@@ -11,8 +11,17 @@
                 <form>
                     <div class="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
                         <div class="mb-4">
-                            <label for="descripcion" class="block text-gray-700 text-sm font-bold mb-2">Ingresa Departamento</label>  
-                            <input type="text" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="descripcion" wire:model="descripcion">
+                            <label for="descripcion" class="block text-gray-700 text-sm font-bold mb-2">Nombre del Departamento *</label>  
+                            <input type="text" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="descripcion" wire:model="descripcion" required>
+                        </div>
+
+                        <div class="mb-4">
+                            <label for="codigoDepartamento" class="block text-gray-700 text-sm font-bold mb-2">Ingresa Código *</label>  
+                            @if($esNuevo)
+                            <input type="text" pattern="[0,9]{2}" minlength="2" maxlength="2" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="codigoDepartamento" wire:model="codigoDepartamento" required>
+                            @else
+                            <input type="text" pattern="[0,9]{2}" minlength="2" maxlength="2" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="codigoDepartamento" wire:model="codigoDepartamento" disabled>
+                            @endif                      
                         </div>
 
                         <div class="bg-gray-50 px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse">
